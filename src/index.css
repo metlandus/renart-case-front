@@ -1,3 +1,25 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
+@custom-variant dark (&:is(.dark *));
+
+@font-face {
+	font-family: "Avenir";
+	src: url("/fonts/avenir/Avenir-Book.ttf");
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("fonts/montserrat/Montserrat-Regular.ttf");
+	font-weight: 400;
+}
+@font-face {
+	font-family: "Montserrat";
+	src: url("fonts/montserrat/Montserrat-Medium.otf");
+	font-weight: 500;
+}
+
+@theme {
+	--font-sans: "Avenir", sans-serif;
+	--font-mont: "Montserrat", sans-serif;
+}
 
