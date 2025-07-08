@@ -4,7 +4,7 @@ import { useEffect, useState, useRef } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 
 async function getProducts(popularityScore = 0, priceMin = 0, priceMax = 1000) {
-	const url = `http://localhost:5000/api/rings?popularityScore=${popularityScore}&priceMin=${priceMin}&priceMax=${priceMax}`;
+	const url = `https://renart-case-backend.onrender.com/api/rings?popularityScore=${popularityScore}&priceMin=${priceMin}&priceMax=${priceMax}`;
 
 	try {
 		const response = await fetch(url, { method: "GET" });
