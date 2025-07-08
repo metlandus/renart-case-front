@@ -5,7 +5,11 @@ import {
 	FiUser,
 	FiSearch,
 } from "react-icons/fi";
-import { GiHamburgerMenu } from "react-icons/gi";
+import { RxHamburgerMenu } from "react-icons/rx";
+import { FiPlus } from "react-icons/fi";
+
+import { IoCloseOutline } from "react-icons/io5";
+
 import { useState } from "react";
 import { Drawer } from "@mui/material";
 
@@ -56,14 +60,14 @@ export function Header() {
 	//   );
 	return (
 		<header>
-			<div className="flex justify-between p-5">
+			<div className="flex justify-between p-5 border-b-2 border-[#e5e7eb] lg:border-none">
 				<div className="flex items-center gap-2 text-[#9B9B9B]">
-					<div>
+					<div className="flex items-center">
 						<button
 							className="lg:hidden"
 							onClick={toggleDrawer(true)}
 						>
-							<GiHamburgerMenu />
+							<RxHamburgerMenu className="text-gray-800 size-6" />
 						</button>
 						<Drawer
 							open={open}
@@ -75,13 +79,24 @@ export function Header() {
 							}}
 							onClose={toggleDrawer(false)}
 						>
-							{ringsList.map((item) => (
-								<a
-									href="#"
-									className="text-[#2f2f2f] cursor-pointer hover:border-b-2 font-semibold"
-								>
-									{item}
-								</a>
+							<button onClick={toggleDrawer(false)}>
+								<IoCloseOutline size={24} />
+							</button>
+							{ringsList.map((item, index) => (
+								<>
+									<a
+										key={index}
+										href="#"
+										className="text-[#2f2f2f] flex justify-between text-xs font-semibold"
+									>
+										{item}
+										<FiPlus
+											size={16}
+											className="text-[#888888]"
+										/>
+									</a>
+									<div className="border-b-2 border-[#e5e7eb]"></div>
+								</>
 							))}
 						</Drawer>
 					</div>
@@ -92,7 +107,7 @@ export function Header() {
 				</div>
 				<a
 					href="/"
-					className="pl-17 md:pl-2 text-xl md:text-2xl font-bold text-nowrap"
+					className="pl-6 md:pl-0 md:pr-6 lg:pr-0 text-xl md:text-2xl font-bold text-nowrap"
 				>
 					SHOP NAME
 				</a>
@@ -103,15 +118,16 @@ export function Header() {
 					<FiShoppingCart className="size-6 md:size-7" />
 				</div>
 			</div>
-			<nav className="border-y-2 border-[#e5e7eb]">
+			<nav className="hidden lg:block border-y-2 border-[#e5e7eb]">
 				<ul className="flex justify-center gap-10 md:gap-20 xl:gap-30 p-1">
-					{ringsList.map((item) => (
-						<li>
+					{ringsList.map((item, index) => (
+						<li key={index}>
 							<a
 								href="#"
-								className="text-[#2f2f2f] text-xs cursor-pointer hover:border-b-2 font-semibold"
+								className="text-[#2f2f2f] text-xs cursor-pointer font-semibold relative group inline-block pb-1"
 							>
 								{item}
+								<span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#2f2f2f] transition-all duration-400 ease-out group-hover:w-full"></span>
 							</a>
 						</li>
 					))}
