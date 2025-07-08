@@ -4,9 +4,8 @@ import { Rating } from "@mui/material";
 export function ProductCard({ ring }) {
 	const [color, setColor] = useState("yellow");
 
-	console.log(ring);
 	return (
-		<div className="min-w-70 flex flex-col gap-3">
+		<div className="min-w-70 max-w-70 flex flex-col gap-3">
 			<img src={ring.images[color]} className="rounded-2xl" />
 			<h3 className="font-mont-bold text-[15px]">{ring.name}</h3>
 			<p className="font-mont">${Math.ceil(ring.price)}.00 USD</p>

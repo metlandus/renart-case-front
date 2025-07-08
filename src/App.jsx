@@ -4,7 +4,7 @@ import {ProductGrid} from "./components/ProductGrid"
 function App() {
 	return (
 		<>
-			<div className="bg-emerald-600 flex justify-center py-3">
+			<div className="bg-[#4F7964] flex justify-center py-3">
 				<p className="text-white font-semibold text-xs">
 					SALE - ALL ITEMS 20% OFF
 				</p>
@@ -27,8 +27,8 @@ function App() {
 						</p>
 					</div>
 				</div>
-            </div>
-            <ProductGrid/>
+			</div>
+			<ProductGrid />
 		</>
 	);
 }
