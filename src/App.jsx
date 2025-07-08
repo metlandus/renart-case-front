@@ -1,4 +1,5 @@
 import { Header } from "./components/Header";
+import {ProductGrid} from "./components/ProductGrid"
 
 function App() {
 	return (
@@ -26,7 +27,8 @@ function App() {
 						</p>
 					</div>
 				</div>
-			</div>
+            </div>
+            <ProductGrid/>
 		</>
 	);
 }

@@ -1,6 +1,5 @@
 @import "tailwindcss";
 
-
 @font-face {
 	font-family: "Avenir";
 	src: url("/fonts/avenir/Avenir-Book.ttf");
@@ -11,13 +10,36 @@
 	font-weight: 400;
 }
 @font-face {
-	font-family: "Montserrat";
+	font-family: "Montserrat Regular";
 	src: url("fonts/montserrat/Montserrat-Medium.otf");
 	font-weight: 500;
+}
+
+@layer utilities {
+	.custom-scrollbar::-webkit-scrollbar {
+		width: 8px;
+		height: 8px;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-track {
+		background: transparent;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-thumb {
+		background-color: #888;
+		border-radius: 4px;
+	}
+
+	.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+		background-color: #555;
+	}
 }
 
 @theme {
 	--font-sans: "Avenir", sans-serif;
 	--font-mont: "Montserrat", sans-serif;
+	--font-mont-bold: "Montserrat Regular", sans-serif;
+	--color-Yellowg: #e6ca97;
+	--color-Whiteg: #d9d9d9;
+	--color-Roseg: #e1a4a9;
 }
-
